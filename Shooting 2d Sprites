@@ -1,0 +1,8 @@
+void Shoot()
+    {
+        //Get the angle between player (with z rotation of 0) and position of cursor
+        float angle = Mathf.Atan2(attackPos.y - transform.position.y, attackPos.x - transform.position.x) * 180 / Mathf.PI - 90;
+        
+        //Apply the angle to 2d sprite
+        GameObject bullet = Instantiate(arrow, Player.GetPosition(), Quaternion.Euler(0,0,transform.rotation.eulerAngles.z + angle));
+    }
